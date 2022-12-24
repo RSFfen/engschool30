@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Страница сообщений{% endblock title %}
+
+{% block content %}
+<h1>Страница сообщений</h1>
+<ul>
+    {% for post in post_list %}
+        <li>{{ post.text }}</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

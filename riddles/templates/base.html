@@ -1,0 +1,23 @@
+{% load static %}
+<head>
+    <title>{% block title %} {% endblock title %}</title>
+  <style>
+   body {
+       background: url({% static '1642245137_10-adonius-club-p-novogodnyaya-yelka-na-prozrachnom-fone-16.png' %}); /* Фоновый цвет и фоновый рисунок*/
+       color: #fff; /*Цвет текста на странице*/
+       background-attachment: fixed; /* Фон страницы фиксируется */
+       background-repeat: repeat; /* Изображение повторяется по горизонтали */
+   }
+  </style>
+</head>
+<link rel="stylesheet" href="{% static 'main.css' %}" />
+
+<header>
+    <a href="{% url 'home' %}">Домашняя страница</a> |
+    <a href="{% url 'riddles:index' %}">Загадки</a> |
+    <a href="{% url 'blog:home' %}">Блог</a> |
+    <a href="{% url 'posts:home' %}">Сообщения</a>
+</header>
+
+{% block content %} {% endblock content %}
+    

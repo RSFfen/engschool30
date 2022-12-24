@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Доступные загадки</h1>
+
+{% if message %}
+    <p><strong>{{ message }}</strong></p>
+{% endif %}
+
+{% if latest_riddles %}
+
+    <ul>
+        {% for riddle in latest_riddles %}
+            <li>
+                <a href="/riddles/{{ riddle.id }}/">
+                    {{ riddle.id }} -- {{ riddle.riddle_text }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>На данный момент загадок пока нет.</p>
+{% endif %}
+
+{% endblock content %}
